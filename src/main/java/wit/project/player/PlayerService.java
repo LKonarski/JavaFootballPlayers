@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @Service
 public class PlayerService {
@@ -23,9 +22,9 @@ public class PlayerService {
     }
 
     public void addNewPlayer(Player player) {
-        Optional<Player> playerOptional = playerRepository
-                .findPlayerByInitials(player.getInitials());
-        if (playerOptional.isPresent()) {
+        boolean existInitials = playerRepository
+                .selectExistsInitials(player.getInitials());
+        if (existInitials) {
             throw new IllegalStateException("initials taken");
         }
         playerRepository.save(player);
@@ -56,9 +55,9 @@ public class PlayerService {
         if (initials != null &&
                 initials.length() > 0 &&
                 !Objects.equals(player.getInitials(), name)) {
-            Optional<Player> playerOptional = playerRepository
-                    .findPlayerByInitials(initials);
-            if (playerOptional.isPresent()) {
+            boolean existsInitials = playerRepository
+                    .selectExistsInitials(initials);
+            if (existsInitials) {
                 throw new IllegalStateException("initials taken");
         }
             player.setInitials(initials);

@@ -32,6 +32,7 @@ public class Player {
     private String position;
     private String foot;
     private int trophies;
+    private int matches;
     private int goals;
     private int assists;
     private int yellowcards;
@@ -52,6 +53,7 @@ public class Player {
                   String position,
                   String foot,
                   int trophies,
+                  int matches,
                   int goals,
                   int assists,
                   int yellowcards,
@@ -68,6 +70,7 @@ public class Player {
         this.position = position;
         this.foot = foot;
         this.trophies = trophies;
+        this.matches = matches;
         this.goals = goals;
         this.assists = assists;
         this.yellowcards = yellowcards;
@@ -85,6 +88,7 @@ public class Player {
                   String position,
                   String foot,
                   int trophies,
+                  int matches,
                   int goals,
                   int assists,
                   int yellowcards,
@@ -100,6 +104,7 @@ public class Player {
         this.position = position;
         this.foot = foot;
         this.trophies = trophies;
+        this.matches = matches;
         this.goals = goals;
         this.assists = assists;
         this.yellowcards = yellowcards;
@@ -209,6 +214,13 @@ public class Player {
     public void setTrophies(int trophies) {
         this.trophies = trophies;
     }
+    public int getMatches() {
+        return matches;
+    }
+
+    public void setMatches(int matches) {
+        this.trophies = matches;
+    }
 
     public int getGoals() {
         return goals;
@@ -244,24 +256,25 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", initials='" + initials + '\'' +
-                ", age=" + age +
-                ", dob=" + dob +
-                ", height=" + height +
-                ", number=" + number +
-                ", country='" + country + '\'' +
-                ", club='" + club + '\'' +
-                ", position='" + position + '\'' +
-                ", foot='" + foot + '\'' +
-                ", trophies=" + trophies +
-                ", goals=" + goals +
-                ", assists=" + assists +
-                ", yellowcards=" + yellowcards +
-                ", redcards=" + redcards +
+        return "Player { " +
+                "id = " + id +
+                ", name = '" + name + '\'' +
+                ", lastname = '" + lastname + '\'' +
+                ", initials = '" + initials + '\'' +
+                ", age = " + age +
+                ", dob = " + dob +
+                ", height = " + height +
+                ", number = " + number +
+                ", country = '" + country + '\'' +
+                ", club = '" + club + '\'' +
+                ", position = '" + position + '\'' +
+                ", foot = '" + foot + '\'' +
+                ", trophies = " + trophies +
+                ", matches = " + matches +
+                ", goals = " + goals +
+                ", assists = " + assists +
+                ", yellowcards = " + yellowcards +
+                ", redcards = " + redcards +
                 '}';
     }
 }

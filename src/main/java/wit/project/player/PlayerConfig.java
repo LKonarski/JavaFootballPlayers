@@ -26,7 +26,8 @@ public class PlayerConfig {
                     "Striker",
                     "Right",
                     34,
-                    819,
+                    1148,
+                    820,
                     277,
                     150,
                     7
@@ -44,14 +45,54 @@ public class PlayerConfig {
                     "Winger",
                     "Left",
                     37,
-                    800,
+                    1030,
+                    801,
                     388,
                     95,
                     4
             );
 
+            Player Robert = new Player(
+                    "Robert",
+                    "Lewandowski",
+                    "RL9",
+                    LocalDate.of(1988, 8, 21),
+                    1.85,
+                    9,
+                    "Poland",
+                    "FC Barcelona",
+                    "Striker",
+                    "Right",
+                    27,
+                    840,
+                    610,
+                    170,
+                    79,
+                    2
+            );
+
+            Player Kylian = new Player(
+                    "Kylian",
+                    "Mbappe Lottin",
+                    "KM7",
+                    LocalDate.of(1998, 12, 20),
+                    1.78,
+                    7,
+                    "France",
+                    "PSG FC",
+                    "Striker",
+                    "Right",
+                    14,
+                    374,
+                    264,
+                    135,
+                    43,
+                    3
+            );
+
+
             repository.saveAll(
-                    List.of(Cristiano, Lionel)
+                    List.of(Cristiano, Lionel, Robert, Kylian)
             );
         };
     }
